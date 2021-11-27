@@ -3,18 +3,22 @@
     parent: {{ count }}
     <!-- <Son1 :value="count" @input="count = $event" /> -->
     <Son1 v-model="count" />
+    <!-- <Son2 :count="count" @update:count="count = $event" /> -->
+    <Son2 :count.sync="count" />
   </div>
 </template>
 
 <script>
 import Son1 from './Son1'
+import Son2 from './Son2'
 
 // v-model = :value + @input 向子组件传递value prop和input事件
 
 export default {
   name: 'Parent',
   components: {
-    Son1
+    Son1,
+    Son2
   },
   provide () {
     const { theme, toggleTheme } = this

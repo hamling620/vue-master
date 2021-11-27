@@ -60,7 +60,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
       filename: 'index.html',
-      title: 'vue-communication'
+      title: 'vue-master'
     }),
     new CleanWebpackPlugin()
   ]

@@ -4,6 +4,10 @@
 
 ## 2. 父组件给子组件注册($on)自定义事件，子组件$emit父组件注册的事件，然后给事件回调传递参数，实现子组件向父组件通信。
 
+  - 两种语法糖
+  - v-model 等价于父组件给子组件传递value prop和input事件。子组件获取value prop，并且可以去emit('input', newVal)事件，并传入数据。
+  - update:[name] 或者:name.sync 是父组件传递name prop并提供修改name的事件。子组件获取name prop，并且去emit('update:name', newVal)事件，并传入数据。
+
 ## 3. 通过EventBus(一个Vue的实例）跨组件通信。需要获得数据的组件通过监听($on)一个自定义事件，并从回调函数参数中获取数据；发送数据的组件释放($emit)这个组件，然后传递数据。
 
 ## 4. ref作用于元素上可以获取真实DOM元素，作用于组件上可以获取组件实例。可以通过this.$refs进行访问。
