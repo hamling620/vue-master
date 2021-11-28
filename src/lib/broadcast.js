@@ -1,4 +1,4 @@
-export function broadcast (event, value) {
+export default function (event, value) {
   const broadcast = (children) => {
     children.forEach(child => {
       child.emit(event, value)

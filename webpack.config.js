@@ -2,6 +2,8 @@ const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const EslintPlugin = require('eslint-webpack-plugin')
+const { DefinePlugin } = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -56,6 +58,13 @@ module.exports = {
     ]
   },
   plugins: [
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    new EslintPlugin({
+      context: path.resolve(__dirname, 'src'),
+      extensions: ['.vue', '.js']
+    }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),

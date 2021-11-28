@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <router-view />
+    <Parent />
   </div>
 </template>
 
 <script>
-import { test } from '@/api'
+import Parent from '@/views/correspond/Parent'
 
 export default {
   name: 'App',
-  async created () {
-    const res = await test()
-    console.log(res)
+  components: {
+    Parent
   }
 }
 </script>

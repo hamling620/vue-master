@@ -1,4 +1,4 @@
-export function dispatch (event, value) {
+export default function (event, value) {
   let parent = this.$parent
   while (parent) {
     parent.$emit(event, value)
