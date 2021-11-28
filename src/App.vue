@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import { test } from '@/api'
+// import { test } from '@/api'
 
 export default {
-  name: 'App',
-  async created () {
-    const res = await test()
-    console.log(res)
-  }
+  name: 'App'
+  // async created () {
+  //   const res = await test()
+  //   console.log(res)
+  // }
 }
 </script>
 

@@ -2,12 +2,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-
-import '@/assets/scss/index.scss'
-
+import Element from '@/plugin/element'
 import { bus, dispatch, broadcast } from '@/lib'
 
-Vue.use(router)
+import '@/assets/scss/index.scss'
+import '@/assets/scss/element.scss'
+
+Vue.use(Element)
 
 Vue.prototype.$bus = bus
 

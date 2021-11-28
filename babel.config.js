@@ -9,6 +9,15 @@ module.exports = {
     ]
   ],
   plugins: [
-    '@babel/plugin-proposal-optional-chaining'
+    'transform-vue-jsx',
+    '@babel/plugin-proposal-optional-chaining',
+    [
+      'component',
+      {
+        libraryName: 'element-ui',
+        // styleLibraryName: 'theme-chunk'
+        style: false
+      }
+    ]
   ]
 }
