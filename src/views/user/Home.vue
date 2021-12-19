@@ -1,21 +1,15 @@
 <template>
   <div>
-    <!-- <router-link to="/">主页</router-link>
-    <router-link to="/login">登录</router-link>
-    <router-link to="/profile">用户</router-link> -->
-    <Render />
-    <EditTable />
+    <VirtualList />
   </div>
 </template>
 
 <script>
-import Render from '@/views/render'
-import EditTable from '@/views/EditTable'
+import VirtualList from '@/views/virtualList'
 
 export default {
   components: {
-    Render,
-    EditTable
+    VirtualList
   }
 }
 </script>

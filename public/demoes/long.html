@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>长列表</title>
+</head>
+<body>
+  <ul id="container"></ul>
+  <script>
+    const container = document.getElementById('container')
+    let timer = Date.now()
+    for (let i = 0; i < 100000; i++) {
+      const li = document.createElement('li')
+      li.innerHTML = i + 1
+      container.appendChild(li)
+    }
+    console.log('js执行时间', Date.now() - timer) // 414ms
+    setTimeout(() => {
+      console.log('js执行和渲染总时间', Date.now() - timer) // 3964
+    }, 0)
+
+    // 这样做的缺点：渲染的列表太多会造成卡顿
+  </script>
+</body>
+</html>
